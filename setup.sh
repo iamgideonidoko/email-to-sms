@@ -16,3 +16,11 @@ curl -s --user 'api:<YOUR_API_KEY>' \
     https://api.mailgun.net/v3/domains/<YOUR_DOMAIN>/webhooks \
     -F id='opened' \
     -F url='https://XXXXXX'
+
+# Send email to mailing list recipients
+curl -s --user 'api:<YOUR_API_KEY>' \
+    https://api.mailgun.net/v3/<YOUR_DOMAIN>/messages \
+    -F from='postmaster@<YOUR_DOMAIN>' \
+    -F to='demo_list@<YOUR_DOMAIN>' \
+    -F subject='Hello there!' \
+    -F text='This is a demo email informing you about the demo weekly event for demo activities.'
