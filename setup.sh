@@ -23,4 +23,4 @@ curl -s --user 'api:<YOUR_API_KEY>' \
     -F from='postmaster@<YOUR_DOMAIN>' \
     -F to='demo_list@<YOUR_DOMAIN>' \
     -F subject='Hello there!' \
-    -F text='This is a demo email informing you about the demo weekly event for demo activities.'
+    -F text="We've got the following special offers lined up for you: ..."

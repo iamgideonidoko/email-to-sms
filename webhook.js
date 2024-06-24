@@ -28,7 +28,7 @@ app.post("/", async (req, res) => {
     const phone = userVariables["phone"];
     const username = eventData.recipient?.split("@")[0];
 
-    const smsTemplate = `Hi ${username}, remember the demo event happens weekly.`;
+    const smsTemplate = `Hi ${username}, we have some specials for today only. More details in your email.`;
 
     // Send SMS using MessageMedia API
     const base64AuthKey = btoa(
@@ -41,9 +41,6 @@ app.post("/", async (req, res) => {
           {
             content: smsTemplate,
             destination_number: phone,
-            scheduled: new Date(
-              new Date().setDate(new Date().getDate() + 2),
-            ).toISOString(), // Send SMS after 3 days
           },
         ],
       },
