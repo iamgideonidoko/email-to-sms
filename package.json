@@ -6,7 +6,8 @@
   "main": "webhook.js",
   "scripts": {
     "start": "node webhook",
-    "dev": "nodemon webhook"
+    "dev": "nodemon webhook",
+    "send:email": "node send"
   },
   "keywords": [],
   "author": "Gideon Idoko <iamgideonidoko@gmail.com>",
@@ -15,7 +16,8 @@
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "form-data": "^4.0.0"
+    "form-data": "^4.0.0",
+    "mailgun-js": "^0.22.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.3"
