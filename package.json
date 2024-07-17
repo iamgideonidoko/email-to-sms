@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node webhook",
     "dev": "nodemon webhook",
+    "expose": "lt -p 5000",
     "send:email": "node send"
   },
   "keywords": [],
@@ -17,9 +18,12 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "form-data": "^4.0.0",
-    "mailgun-js": "^0.22.0"
+    "lowdb": "^7.0.1",
+    "mailgun-js": "^0.22.0",
+    "nanoid": "^5.0.7"
   },
   "devDependencies": {
+    "localtunnel": "^2.0.2",
     "nodemon": "^3.1.3"
   }
 }
