@@ -4,14 +4,14 @@ import { nanoid } from "nanoid";
 import { JSONFilePreset } from "lowdb/node";
 config();
 
-const db = await JSONFilePreset("db.json", { users: [], emails: [] });
+const db = await JSONFilePreset("db.json", { users: [], emails: [] }); // Initialize database
 
 const apiKey = process.env.MAILGUN_ACCESS_KEY,
   domain = process.env.MAILGUN_DOMAIN,
   mg = mailgun({ apiKey, domain });
 
 const sendEmail = async (subject, text) => {
-  const customMessageId = nanoid(10);
+  const customMessageId = nanoid(10); // Create an ID for the email
   await db.update(({ emails }) =>
     emails.push({
       id: customMessageId,
@@ -25,8 +25,8 @@ const sendEmail = async (subject, text) => {
       to: user.email,
       subject,
       text,
-      "o:tracking": true,
-      "v:custom-message-id": customMessageId,
+      "o:tracking": true, // Track the email
+      "v:custom-message-id": customMessageId, // Pass the email ID as a variable
     };
     try {
       await mg.messages().send(data);

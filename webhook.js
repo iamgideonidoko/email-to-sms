@@ -5,7 +5,7 @@ import axios from "axios";
 import { JSONFilePreset } from "lowdb/node";
 config();
 
-const db = await JSONFilePreset("db.json", { users: [], emails: [] });
+const db = await JSONFilePreset("db.json", { users: [], emails: [] }); // Initialize database
 
 const app = express();
 app.use(express.json());
