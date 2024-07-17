@@ -37,7 +37,7 @@ app.post("/", async (req, res) => {
       .update(signature.timestamp.concat(signature.token))
       .digest("hex");
     if (encodedToken !== signature.signature)
-      return res.status(401).send("Unauthorized");
+      throw { statusCode: 401, message: "Unauthorized" };
     const eventData = body["event-data"];
     // Log event data
     console.log("eventData: ", JSON.stringify(eventData, null, 2));
